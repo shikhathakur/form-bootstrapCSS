@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js\sample.js"></script>
+</head>
+<body>
+    <!--Header-->
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <img src="http://www.maxsum.com/wp-content/uploads/2014/11/Kmart-Wishing-Tree-Logo.gif" width="70px" ,height="70px">
+                </div>
+                <div class="col-xs-4">
+                    <h2>Make A Wish</h2>
+                </div>
+                <div class="col-xs-offset-10">
+                    <h3 id="name">userName</h3>
+                </div>
+            </div>
+            <hr/>
+        </div>
+        <!--Form-->
+        <div class="container ">
+            <div>
+                <h6>Shikha Thakur</h6>
+            </div>
+            <form role="form" action="display.html" class="form-horizontal" onsubmit="fnSubmitForm()">
+                <div class="form-group ">
+                    <label for="userName" class="col-xs-2 control-label">Name:</label>
+                    <div class="col-xs-6 row" id="inputName">
+                        <input type="text" oninput="fnValidateName()"  class="form-control" id="userName" pattern="[a-zA-Z]{1,}" placeholder="name" required>
+                        <span class="help-block">Name Should contain both upper and lower case alphabets only</span>
+                        <span id="nGlyph"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="inputAmount">Amount:</label>
+                    <div class="input-group col-xs-5" oninput="fnValidateAmount()" id="inputAmt">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" pattern="[0-9]{1,}" id="userAmount" placeholder="Amount" required>
+                        <span id="aGlyph" ></span>
+                        <span class="input-group-addon">.00</span>  
+                    </div>
+                    <span class="help-block col-xs-offset-2">Amount Should contain only positive integers</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword" class="col-xs-2 control-label">Password:</label>
+                    <div class="col-xs-6" oninput="fnValidatePassword()" id="inputPwd">
+                        <input type="password" class="form-control row" pattern="[a-zA-Z0-9]{6,}" id="userPassword" placeholder="Password" required>
+                        <span id="pGlyph" style="right:38px"></span>
+                        <span class="help-block ">Password Should contain atleast 6 characters</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="radio-inline col-xs-offset-2 ">
+                        <input type="radio" name="radioOptions" id="iRadio1" value="option1"> savings
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radioOptions" id="iRadio2" value="option2"> current
+                    </label>
+                </div>
+            
+                <div class="form-group ">
+                    <div class="col-xs-offset-2">
+                        <button type="submit" class="btn ">Submit</button>&nbsp;
+                        <button type="reset" class="btn ">Reset</button>
+                    </div>
+                </div>
+            </form>
+            <hr/>
+            <!--footer-->
+            <footer>
+                <div>&#169; copyright</div>
+                <div class="col-xs-offset-9">
+                    <a href>Contact-Us </a>
+                    <a href>About </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
